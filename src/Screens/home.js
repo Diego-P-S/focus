@@ -1,6 +1,5 @@
 import React, {   useState } from "react";
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
-import { colors } from "../utils/colors";
 import { Focus } from "../features/focus";
 import { Timer } from "../features/timer";
 import { FocusHistory } from "../features/focusHistory";
@@ -33,6 +32,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: colors.backgroudColor,
+    backgroundColor:"#98d9b6",
   },
 });
