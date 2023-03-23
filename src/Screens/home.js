@@ -1,10 +1,11 @@
 import React, {   useState } from "react";
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
 import { Focus } from "../features/focus";
-import { Timer } from "../features/timer";
+import   Timer  from "../features/timer";
 import { FocusHistory } from "../features/focusHistory";
  
-export default function Home() {
+const Home = () => {
+
   const [currentSubject, setCurrentSubject] = useState();
   const [history, setHistory] = useState([]);
 
@@ -28,6 +29,8 @@ export default function Home() {
   );
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -35,3 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor:"#98d9b6",
   },
 });
+
+
+export default Home;

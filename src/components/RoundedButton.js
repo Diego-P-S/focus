@@ -1,15 +1,16 @@
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
 export const RoundedButton = ({
-  style = {},
-  textStyle = {},
+  style,
+  textStyle,
   size = 100,
+  onPress,
   ...props
 }) => {
   return (
     <TouchableOpacity
       style={[styles(size).radius, style]}
-      onPress={() => props.onPress()}
+      onPress={onPress}
     >
       <Text style={[styles(size).text, textStyle]}>{props.title}</Text>
     </TouchableOpacity>

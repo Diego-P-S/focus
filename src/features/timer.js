@@ -6,7 +6,7 @@ import { RoundedButton } from "../components/RoundedButton";
 import { Timing } from "./timing";
 import { useKeepAwake } from "expo-keep-awake";
 import { ProgressBar } from 'react-native-paper';
-import {ViewProgressBar, TimerContainer, ViewCountdown, SubText, ViewFocus,ClearSubjectWrapper,TimingWrapper,ViewButtonWrapper} from "./styles";
+import {ViewProgressBar, TimerContainer, ViewCountdown, SubText, ViewFocus,ClearSubjectWrapper,TimingWrapper,ButtonWrapper} from "./styles";
 
 const ONE_SECOND_IN_MS = 1000;
 
@@ -18,7 +18,7 @@ const PATTERN = [
   1 * ONE_SECOND_IN_MS,
 ];
 
-export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
+const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   useKeepAwake();
   const [isStarted, setIsStarted] = useState(false);
   const [progress, setProgress] = useState(1);
@@ -29,7 +29,7 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
     setIsStarted(false);
     setProgress(1);
     reset();
-    onTimerEnd(focusSubject);
+    if(onTimerEnd && focusSubject) onTimerEnd(focusSubject);
   };
 
   return (
@@ -42,9 +42,9 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
           onEnd={onEnd}
         />
 
-        <ViewFocus >
-          <SubText >Focusing on:</SubText>
-          <SubText >{focusSubject}</SubText>
+        <ViewFocus>
+          <SubText>Focusing on:</SubText>
+          <SubText>{focusSubject}</SubText>
         </ViewFocus>
       </ViewCountdown>
 
@@ -61,16 +61,17 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
         <Timing onChangeTime={setMinutes} />
       </TimingWrapper>
 
-      <ViewButtonWrapper>
+      <ButtonWrapper>
         {!isStarted ? (
           <RoundedButton title="start" onPress={() => setIsStarted(true)} />
         ) : (
           <RoundedButton title="pause" onPress={() => setIsStarted(false)} />
         )}
-      </ViewButtonWrapper>
+      </ButtonWrapper> 
       <ClearSubjectWrapper>
-        <RoundedButton size={50} title="-" onPress={clearSubject} />
+        <RoundedButton size={60} title="Finish" onPress={clearSubject} />
       </ClearSubjectWrapper>
     </TimerContainer>
   );
 };
+export default Timer;

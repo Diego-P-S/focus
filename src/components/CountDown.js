@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import {TextTime } from "./styles";
+import { TextTime } from "./styles";
 
 const minutesToMillis = (min) => min * 1000 * 60;
 const formatTime = (time) => (time < 10 ? `0${time}` : time);

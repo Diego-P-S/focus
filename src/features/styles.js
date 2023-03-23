@@ -40,12 +40,12 @@ padding:20px;
 
 export const SubText = styled.Text`
 color: #FFF;
-font-size: 10px;
+font-size: 20px;
 font-weight: bold;
 `;
 
 export const TextItem = styled.Text`
-font-size: 10px;
+font-size: px;
 color: #FFF;
 padding: 10px;
 `;
@@ -76,27 +76,26 @@ padding-top: 8px;
 export const TimingWrapper = styled.View`
 flex: 0.1;
 flex-direction: row;
-padding: 10px;
+padding: 50px;
 justify-content: center;
 align-items: center;
 `;
 
 export const ButtonWrapper = styled.View`
-
-    flex: 0.3;
-    flex-direction: row;
-    padding: 1px;
-    justify-content: center;
-    align-items: center;
-    `;
+flex: 0.3;
+flex-direction: row;
+padding: 1px;
+justify-content: center;
+align-items: center;
+ `;
 
 export const ViewFocus = styled.View`
 padding-top:20px;
 `;
+
 export const ClearSubjectWrapper = styled.View`
 flex-direction: row;
-    justify-content: center;
-
+justify-content: center;
 `;
 
 
@@ -104,8 +103,8 @@ flex-direction: row;
 ///////////////// Timing
 
 export const TimingButton = styled.Text`
-flex: 0.5;
-    align-items: center;
-    justify-content: center;
+flex: 0.3;
+align-items: center;
+justify-content: center;
 
 `;
