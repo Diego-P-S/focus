@@ -6,11 +6,12 @@ background-color: #FFF;
 `;
 
 export const Container = styled.View`
-align-items: center;
+padding: 20px;
 `;
  
 export const ButtonView= styled.View`
 justify-content: center;
+borer-radius:20px;
 `;
    
 export const TextInput = styled.Text`
@@ -19,8 +20,17 @@ margin-right: 10px;
 `;
 
 export const TextTitle = styled.Text`
-margin-left: 10px;
-margin-top: 10px;
+color: #FFF;
+font-size: 30px;
+font-weight: bold;
+justify-content: center;
+`;
+
+export const SubTitle = styled.Text`
+color: #FFF;
+font-size: 20px;
+font-weight: bold;
+margin-top: 20px;
 `;
 
 export const InputContainer = styled.View`
@@ -28,6 +38,10 @@ flex-direction: row;
 padding: 20px;
 justify-content: center;
 border-radius:20px;
+background-color: #fff;
+height: auto;
+width: 100%;
+margin-vertical: 10px;
 `;
  
 

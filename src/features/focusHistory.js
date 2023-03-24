@@ -8,7 +8,7 @@ export const FocusHistory = ({ history }) => {
   if (!history || !history.length) {
     return (
       <ViewSub>
-      <SubText>Let`s start?</SubText>
+      <SubText>History:</SubText>
       </ViewSub>
     );
   }

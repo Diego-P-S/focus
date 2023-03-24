@@ -1,33 +1,34 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { RoundedButton } from "../components/RoundedButton";
-import { TextInput } from 'react-native-paper';
-import { Container, TextTitle,InputContainer,ButtonView} from "./styles";
+import { TextInput, View,Button } from "react-native";
+import { Container, TextTitle,InputContainer,ButtonView, SubTitle} from "./styles";
 
 export const Focus = ({ addSubject }) => {
   const [subject, setSubject] = useState(null);
   console.log(subject);
 
   return (
+    
     <Container>
 
       <TextTitle >BE FOCUS ON</TextTitle>
+      <SubTitle>Let`s start?</SubTitle>
 
+      <View style={{flexDirection:"row"}}>
       <InputContainer>
-
-        <TextInput contentStyle={{backgroundColor:"#fff"}}         
+        <TextInput      
           onChangeText={setSubject}
-          label="Let`s Start? Give a name to your focus..."
+          placeholder="De um nome para a sua pratica."
         />
+      </InputContainer>
+        </View>
         <ButtonView >
-          <RoundedButton
-            title="+"
-            size={50}
+          <Button
+            title="Go"
             onPress={() => addSubject(subject)}
           />
         </ButtonView>
-      </InputContainer>
     </Container>
   );
 };
