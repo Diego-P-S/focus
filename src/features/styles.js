@@ -11,7 +11,7 @@ padding: 20px;
  
 export const ButtonView= styled.View`
 justify-content: center;
-borer-radius:20px;
+borer-radius: 20px;
 `;
    
 export const TextInput = styled.Text`
@@ -37,19 +37,17 @@ export const InputContainer = styled.View`
 flex-direction: row;
 padding: 20px;
 justify-content: center;
-border-radius:20px;
+border-radius: 20px;
 background-color: #fff;
 height: auto;
 width: 100%;
 margin-vertical: 10px;
 `;
  
-
-
 ///////////// FocusHistory
 
 export const ViewSub = styled.View`
-padding:20px;
+padding: 20px;
 `;
 
 export const SubText = styled.Text`
@@ -59,7 +57,7 @@ font-weight: bold;
 `;
 
 export const TextItem = styled.Text`
-font-size: px;
+font-size: 20px;
 color: #FFF;
 padding: 10px;
 `;
@@ -111,8 +109,6 @@ export const ClearSubjectWrapper = styled.View`
 flex-direction: row;
 justify-content: center;
 `;
-
-
 
 ///////////////// Timing
 

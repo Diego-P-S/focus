@@ -40,8 +40,8 @@ export default function Login() {
           onChangeText={(password) => setPassword(password)}
         /> 
       </View> 
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text> 
+      <TouchableOpacity onPress={() => navigation.navigate('CreateUser')}>
+        <Text style={styles.forgot_button}>Register</Text> 
       </TouchableOpacity> 
       <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')} >
         <Text style={styles.loginText}>LOGIN</Text> 
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   loginBtn: {
-    width: "80%",
+    width: "70%",
     borderRadius: 25,
     height: 50,
     alignItems: "center",
