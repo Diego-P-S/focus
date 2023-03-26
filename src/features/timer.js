@@ -43,7 +43,7 @@ const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
         />
 
         <ViewFocus>
-          <SubText>Focusing on:</SubText>
+          <SubText>Prática:</SubText>
           <SubText>{focusSubject}</SubText>
         </ViewFocus>
       </ViewCountdown>

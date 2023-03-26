@@ -9,9 +9,20 @@ export const Container = styled.View`
 padding: 20px;
 `;
  
-export const ButtonView= styled.View`
+
+export const ButtonGo = styled.TouchableOpacity`
+background-color: #00229A;
+width: 100%;
+height: 30px;
+border-radius: 5px;
+margin-top: 13px;
+align-items: center;
 justify-content: center;
-borer-radius: 20px;
+`;
+
+export const TextButton= styled.Text`
+font-size: 20px;
+color: #FFF;
 `;
    
 export const TextInput = styled.Text`
@@ -21,7 +32,7 @@ margin-right: 10px;
 
 export const TextTitle = styled.Text`
 color: #FFF;
-font-size: 30px;
+font-size: 20px;
 font-weight: bold;
 justify-content: center;
 `;

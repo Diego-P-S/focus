@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { TextInput, View,Button } from "react-native";
-import { Container, TextTitle,InputContainer,ButtonView, SubTitle} from "./styles";
+import { TextInput, View, Text } from "react-native";
+import { Container, TextTitle,InputContainer,ButtonGo, SubTitle,TextButton} from "./styles";
 
 export const Focus = ({ addSubject }) => {
   const [subject, setSubject] = useState(null);
@@ -13,7 +13,7 @@ export const Focus = ({ addSubject }) => {
     <Container>
 
       <TextTitle >BE FOCUS ON</TextTitle>
-      <SubTitle>Let`s start?</SubTitle>
+      <SubTitle>Vamos Começar?</SubTitle>
 
       <View style={{flexDirection:"row"}}>
       <InputContainer>
@@ -23,13 +23,14 @@ export const Focus = ({ addSubject }) => {
         />
       </InputContainer>
         </View>
-        <ButtonView >
-          <Button
-            title="Go"
-            onPress={() => addSubject(subject)}
-          />
-        </ButtonView>
+       
+
+        <ButtonGo onPress={() => addSubject(subject)} >
+              <TextButton>Go</TextButton>
+        </ButtonGo>
+         
+       
     </Container>
-  );
+  )
 };
 

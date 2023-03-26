@@ -17,7 +17,7 @@ export const FocusHistory = ({ history }) => {
   
   return (
     <ViewContainer>
-      <TextTitle>Things we`ve focused on</TextTitle>
+      <TextTitle>Ultimas práticas:</TextTitle>
       <FlatList data={history} renderItem={renderItem} />
     </ViewContainer>
   );
