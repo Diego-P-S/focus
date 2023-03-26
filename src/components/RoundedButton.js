@@ -17,15 +17,17 @@ export const RoundedButton = ({
   );
 };
 
-const styles = (size) => ({
+const styles = () => ({
   radius: {
-    borderRadius: size / 2,
-    width: size,
-    height: size,
+    borderRadius: 30,
+    width: 100,
+    height:100,
+    
     alignItems: "center",
     justifyContent: "center",
     borderColor: "#FFF",
     borderWidth: 2,
+    
   },
-  text: { color: "#FFF", fontSize: size / 4 },
+  text: { color: "#FFF", fontSize: 30},
 });

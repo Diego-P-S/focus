@@ -117,7 +117,6 @@ justify-content: center;
 ///////////////// Timing
 
 export const TimingButton = styled.Text`
-flex: 0.3;
 align-items: center;
 justify-content: center;
 

@@ -69,7 +69,7 @@ const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
         )}
       </ButtonWrapper> 
       <ClearSubjectWrapper>
-        <RoundedButton size={60} title="Finish" onPress={clearSubject} />
+        <RoundedButton size={50} title="Finish" onPress={clearSubject} />
       </ClearSubjectWrapper>
     </TimerContainer>
   );
