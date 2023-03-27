@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { styles } from './styles'
 
 export default function CreateUser({navigation}){
@@ -7,15 +8,31 @@ export default function CreateUser({navigation}){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
+    
+  
 
-    function handleCreateUser(){
+    async function handleCreateUser(){
         if(name && email && password !== '' && password === passwordConfirm){
-            alert('Cadastro criado com sucesso')
-            navigation.navigate('Login')
+            try {
+                // Store user data using AsyncStorage
+                const userData = {
+                    name,
+                    email,
+                    password
+                }
+                await AsyncStorage.setItem('@UserData', JSON.stringify(userData));
+                alert('Cadastro criado com sucesso')
+                console.log(userData);
+                navigation.navigate('Login')
+            } catch (error) {
+            
+                console.log(error);
+            }
         }else {
             alert('Ops! algo errado')
         }
     }
+
     return(
         <View style={styles.Container}>
             <View style={styles.form} >

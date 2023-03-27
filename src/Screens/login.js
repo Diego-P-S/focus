@@ -1,5 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 
 import { useNavigation } from '@react-navigation/native';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
@@ -13,12 +17,29 @@ import {
 
 
 
-export default function Login() {
-  
-  const navigation = useNavigation();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
- 
+export default function Login({navigation}){
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function handleLogin(){
+      try {
+          const jsonValue = await AsyncStorage.getItem('@User');
+          const userData = jsonValue != null ? JSON.parse(jsonValue) : null;
+          
+          if (email === userData.email && password === userData.password) {
+              alert('Login realizado com sucesso');
+              console.log(userData);
+              
+              navigation.navigate('Home');
+          } else {
+              alert('Email ou senha incorretos');
+          }
+      } catch(e) {
+          // error reading value
+          alert('Erro ao realizar login');
+      }
+  }
   return (
     <View style={styles.container}>
       <Image resizeMode="contain" style={styles.image} source={require("../../assets/focus.png")} /> 
@@ -43,12 +64,13 @@ export default function Login() {
       <TouchableOpacity onPress={() => navigation.navigate('CreateUser')}>
         <Text style={styles.forgot_button}>Register</Text> 
       </TouchableOpacity> 
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')} >
+      <TouchableOpacity style={styles.loginBtn} onPress={handleLogin} >
         <Text style={styles.loginText}>LOGIN</Text> 
       </TouchableOpacity> 
     </View> 
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
