@@ -17,15 +17,18 @@ import {
 
 
 
-export default function Login({navigation}){
+export default function Login(){
 
+const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   async function handleLogin(){
       try {
-          const jsonValue = await AsyncStorage.getItem('@User');
+          const jsonValue = await AsyncStorage.getItem('@UserData');
           const userData = jsonValue != null ? JSON.parse(jsonValue) : null;
+
+
           
           if (email === userData.email && password === userData.password) {
               alert('Login realizado com sucesso');
@@ -85,7 +88,8 @@ const styles = StyleSheet.create({
   },
   inputView: {
     justifyContent:"center",
-    backgroundColor: "#98d9b6",
+    borderColor: "#98d9b6",
+    borderWidth:2,
     borderRadius: 30,
     width: "70%",
     height: 45,
