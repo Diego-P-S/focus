@@ -13,7 +13,7 @@ export default function CreateUser({navigation}){
     async function handleCreateUser(){
         if(name && email && password !== '' && password === passwordConfirm){
             try {
-                // Store user data using AsyncStorage
+                // Guarda os dados com asyncStorage
                 const userData = {
                     name,
                     email,
@@ -28,7 +28,7 @@ export default function CreateUser({navigation}){
                 console.log(error);
             }
         }else {
-            alert('Ops! algo errado')
+            alert('Ops! algo errado, Tente novamente.')
         }
     }
 

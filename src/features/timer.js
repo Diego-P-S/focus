@@ -8,6 +8,8 @@ import { useKeepAwake } from "expo-keep-awake";
 import { ProgressBar } from 'react-native-paper';
 import {ViewProgressBar, TimerContainer, ViewCountdown, SubText, ViewFocus,ClearSubjectWrapper,TimingWrapper,ButtonWrapper} from "./styles";
 
+//1 segundo em milesegundos
+
 const ONE_SECOND_IN_MS = 1000;
 
 const PATTERN = [
@@ -24,6 +26,7 @@ const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const [progress, setProgress] = useState(1);
   const [minutes, setMinutes] = useState(0.1);
 
+  // quando terminado, aplica a funcao reset timer
   const onEnd = (reset) => {
     Vibration.vibrate(PATTERN);
     setIsStarted(false);

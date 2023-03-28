@@ -24,17 +24,18 @@ const navigation = useNavigation();
           const jsonValue = await AsyncStorage.getItem('@UserData');
           const userData = jsonValue != null ? JSON.parse(jsonValue) : null;
 
+ // Testa se o valor dijitado corresponde ao objeto guardado no @UserData
           if (email === userData.email && password === userData.password) {
               alert('Login realizado com sucesso');
-              console.log(userData);
+              
               
               navigation.navigate('Home');
           } else {
               alert('Email ou senha incorretos');
           }
       } catch(e) {
-          // error reading value
-          alert('Erro ao realizar login');
+          
+          alert('Erro ao realizar login, Tente novamente');
       }
   }
   return (
@@ -58,6 +59,8 @@ const navigation = useNavigation();
       <TouchableOpacity onPress={() => navigation.navigate('CreateUser')}>
         <ForgotButton>Register</ForgotButton> 
       </TouchableOpacity> 
+
+{/* onPress valida a funcao handleLogin. caso positivo direciona para a tela home. */}
 
       <LoginBtn onPress={handleLogin} >
         <Text>LOGIN</Text> 
