@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { styles } from './styles'
+import { ButtonForm, TextButton, TextForm, TextInput, UserContainer, ViewForm} from './styles'
 
 export default function CreateUser({navigation}){
     const [name, setName] = useState('');
@@ -34,33 +33,33 @@ export default function CreateUser({navigation}){
     }
 
     return(
-        <View style={styles.Container}>
-            <View style={styles.form} >
-                <TextInput style={styles.inputUserName} placeholder='Nome'
+        <UserContainer>
+            <ViewForm >
+                <TextForm placeholder='Nome'
                 autoCompleteType='username' autoCapitalize='none'
                 placeholderTextColor='#000' autoCorrect={false}
                 onChangeText={(event) => setName(event)}
                  />
-                <TextInput style={styles.inputForm} placeholder='Email'
+                <TextForm  placeholder='Email'
                 autoCompleteType='email' autoCapitalize='none' autoCorrect={false}
                 placeholderTextColor='#000'
                 onChangeText={(event) => setEmail(event)}
                  />
-                <TextInput style={styles.inputForm} placeholder='Senha'
+                <TextForm placeholder='Senha'
                 autoCompleteType='password' autoCapitalize='none'
                 placeholderTextColor='#000' autoCorrect={false}
                 onChangeText={(event) => setPassword(event)}
                  />
-                <TextInput style={styles.inputForm} placeholder='Confirmar senha'
+                <TextForm placeholder='Confirmar senha'
                 autoCompleteType='password' autoCapitalize='none' autoCorrect={false}
                 placeholderTextColor='#000'
                 onChangeText={(event) => setPasswordConfirm(event)}
                  />
-                <TouchableOpacity style={styles.buttonForm}
+                <ButtonForm
                 onPress={handleCreateUser} >
-                    <Text style={styles.textButton}>Cadastrar</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+                    <TextButton >Cadastrar</TextButton>
+                </ButtonForm>
+            </ViewForm>
+        </UserContainer>
     );
 }

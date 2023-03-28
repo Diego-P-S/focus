@@ -13,7 +13,7 @@ padding: 20px;
 export const ButtonGo = styled.TouchableOpacity`
 background-color: #00229A;
 width: 100%;
-height: 30px;
+height: auto;
 border-radius: 5px;
 margin-top: 13px;
 align-items: center;
@@ -21,13 +21,14 @@ justify-content: center;
 `;
 
 export const TextButton= styled.Text`
-font-size: 20px;
+font-size: 25px;
 color: #FFF;
 `;
    
-export const TextInput = styled.Text`
+export const TextInput = styled.TextInput`
 flex: 1;
-margin-right: 10px;
+font-size: 20px;
+text-align: center;
 `;
 
 export const TextTitle = styled.Text`
@@ -81,8 +82,8 @@ flex: 1;
 ////////////////// Timer
 
 export const TimerContainer = styled.View`
-
-flex: 1;
+flex:1;
+margin-top: 20px;
 `;
 
 export const ViewCountdown = styled.View`
@@ -110,6 +111,7 @@ flex-direction: row;
 padding: 1px;
 justify-content: center;
 align-items: center;
+margin-top:10px;
  `;
 
 export const ViewFocus = styled.View`

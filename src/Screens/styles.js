@@ -1,48 +1,46 @@
-import { StyleSheet } from 'react-native';
 import styled from "styled-components/native";
 
-export const styles = StyleSheet.create({
-    Container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#98d9b6',
-    },
-    form: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    inputUserName: {
-        backgroundColor: '#FFF',
-        width: 250,
-        height: 35,
-        borderRadius: 5,
-        padding: 5,        
-    },
-    inputForm: {
-        backgroundColor: '#FFF',
-        marginTop: 13,
-        width: 250,
-        height: 35,
-        borderRadius: 5,
-        padding: 5,
-    },
-    buttonForm: {
-        backgroundColor: '#00229A',
-        width: 100,
-        height: 30,
-        borderRadius: 5,
-        marginTop: 13,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    textButton: {
-        color: '#FFF',
-        fontWeight: 'bold',
-    },
-})
+export const UserContainer = styled.View`
+flex: 1;
+align-items: center;
+justify-content: center;
+background-color: #98d9b6;
+`;
+export const ViewForm= styled.View`
+align-items: center;
+justify-content: center;
+`;
 
+export const TextForm = styled.TextInput`
+background-color: #FFF;
+width: 250px;
+height: 35px;
+border-radius: 5px;
+padding: 5px;
+margin-vertical: 5px;
+font-size:20px;
 
+`;
+
+export const ButtonForm = styled.TouchableOpacity`
+background-color: #00229A;
+width: auto;
+height: auto;
+border-radius: 5px;
+margin-top: 13px;
+align-items: center;
+justify-content: center;
+padding: 5px;
+
+`;
+
+export const TextButton = styled.Text`
+color: #FFF;
+font-weight: bold;
+font-size:20px;
+`;
+  
+////////////////////////////////////////////////////////////////////////////////////////////
 
 export const Container = styled.View`
 flex: 1;

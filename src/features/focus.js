@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { TextInput, View, Text } from "react-native";
-import { Container, TextTitle,InputContainer,ButtonGo, SubTitle,TextButton} from "./styles";
+import { View } from "react-native";
+import { Container, TextTitle,InputContainer,ButtonGo, SubTitle,TextButton,TextInput } from "./styles";
 
 export const Focus = ({ addSubject }) => {
   const [subject, setSubject] = useState(null);

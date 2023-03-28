@@ -44,7 +44,7 @@ const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
 
         <ViewFocus>
           <SubText>Prática:</SubText>
-          <SubText>{focusSubject}</SubText>
+          <SubText >{focusSubject}</SubText>
         </ViewFocus>
       </ViewCountdown>
 
@@ -52,7 +52,7 @@ const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
         <ProgressBar
           progress={progress}
           color={"#FFF"}
-          style={{alignItems: "center",
+          style={{alignItems: "center", marginVertical: 20,
           justifyContent: "center"}}
         />
       </ViewProgressBar>
