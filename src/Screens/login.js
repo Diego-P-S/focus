@@ -10,18 +10,18 @@ import {TextInput,Text,
   TouchableOpacity
 } from "react-native";
 import { Container, InputView, Image, ForgotButton, LoginBtn} from './styles';
-
-
+import axios from "axios";
 
 export default function Login(){
 
 const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+ 
 
-  
   async function handleLogin(){
-      try {
+  
+     try {
           const jsonValue = await AsyncStorage.getItem('@UserData');
           const userData = jsonValue != null ? JSON.parse(jsonValue) : null;
 
@@ -39,7 +39,10 @@ const navigation = useNavigation();
           alert('Erro ao realizar login, Tente novamente');
       }
   }
+
+
   return (
+    
     <Container>
       <Image resizeMode="contain"  source={require("../../assets/focus.png")} /> 
       <StatusBar style="auto" />
