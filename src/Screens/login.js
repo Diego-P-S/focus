@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import { useNavigation } from '@react-navigation/native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -16,6 +18,7 @@ const navigation = useNavigation();
  
 
   async function handleLogin(){
+    
     try {
       const jsonValue = await AsyncStorage.getItem('@UserData');
       const userData = jsonValue != null ? JSON.parse(jsonValue) : null;
