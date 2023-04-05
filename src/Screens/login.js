@@ -1,16 +1,12 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-
 import { useNavigation } from '@react-navigation/native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {TextInput,Text,
+import {Text,
   TouchableOpacity
 } from "react-native";
 import { Container, InputView, Image, ForgotButton, LoginBtn} from './styles';
-import axios from "axios";
 
 export default function Login(){
 
