@@ -24,6 +24,7 @@ const navigation = useNavigation();
       const userData = jsonValue != null ? JSON.parse(jsonValue) : null;
 
       // Testa se o valor dijitado corresponde ao objeto guardado no @UserData
+      
       if (email === userData.email && password === userData.password) {
         alert('Login realizado com sucesso');
         navigation.navigate('Home');

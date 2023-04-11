@@ -25,7 +25,7 @@ export const Focus = ({ addSubject }) => {
         </View>
        
 
-        <ButtonGo onPress={() => addSubject(subject)} >
+        <ButtonGo onPress={() => addSubject(subject)} > {/* setSubtect com o nome da pratica*/}
               <TextButton>Go</TextButton>
         </ButtonGo>
          

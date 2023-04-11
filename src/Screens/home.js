@@ -6,21 +6,21 @@ import { FocusHistory } from "../features/focusHistory";
  
 const Home = () => {
 
-  const [currentSubject, setCurrentSubject] = useState();
-  const [history, setHistory] = useState([]);
+  const [currentSubject, setCurrentSubject] = useState(); //useState p/ declara as variáveis de estado
+  const [history, setHistory] = useState([]); //Array para armazenar todo o historico da pratica
 
   return (
-    <SafeAreaView style={styles.container}>
-      {!currentSubject ? (
+    <SafeAreaView style={styles.container}> 
+      {!currentSubject ? ( // se nao existe variavel, rederiza
         <>
-          <Focus addSubject={setCurrentSubject} />
-          <FocusHistory history={history} />
+          <Focus addSubject={setCurrentSubject} /> {/* usuario define o tema*/}
+          <FocusHistory history={history} /> 
         </>
       ) : (
-        <Timer
-          focusSubject={currentSubject}
-          onTimerEnd={(subject) => {
-            setHistory([...history, subject]);
+        <Timer // se existir varial, Timer e rederizado e comeca o 
+          focusSubject={currentSubject} // passa o nome da pratica para o Timer
+          onTimerEnd={(subject) => { // chamada quando temporizador chega ao fim
+            setHistory([...history, subject]); 
           }}
           clearSubject={() => setCurrentSubject(null)}
         />

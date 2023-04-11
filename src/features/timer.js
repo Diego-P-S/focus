@@ -22,16 +22,16 @@ const PATTERN = [
 
 const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   useKeepAwake();
-  const [isStarted, setIsStarted] = useState(false);
+  const [isStarted, setIsStarted] = useState(false); //está em execução ou não
   const [progress, setProgress] = useState(1);
-  const [minutes, setMinutes] = useState(0.1);
+  const [minutes, setMinutes] = useState(0.1); // duracao em minutos
 
   // quando terminado, aplica a funcao reset timer
   const onEnd = (reset) => {
-    Vibration.vibrate(PATTERN);
-    setIsStarted(false);
+    Vibration.vibrate(PATTERN); // ao termino vibra o celular
+    setIsStarted(false); 
     setProgress(1);
-    reset();
+    reset(); // reset para o timer inicial
     if(onTimerEnd && focusSubject) onTimerEnd(focusSubject);
   };
 
@@ -47,7 +47,7 @@ const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
 
         <ViewFocus>
           <SubText>Prática:</SubText>
-          <SubText >{focusSubject}</SubText>
+          <SubText >{focusSubject}</SubText> {/* printa nome da pratica*/}
         </ViewFocus>
       </ViewCountdown>
 
@@ -65,7 +65,7 @@ const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
       </TimingWrapper>
 
       <ButtonWrapper>
-        {!isStarted ? (
+        {!isStarted ? (  // Nao esta em execucao, entao comece
           <RoundedButton title="start" onPress={() => setIsStarted(true)} />
         ) : (
           <RoundedButton title="pause" onPress={() => setIsStarted(false)} />

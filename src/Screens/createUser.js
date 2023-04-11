@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ButtonForm, TextButton, TextForm, TextInput, UserContainer, ViewForm} from './styles'
+import { ButtonForm, TextButton, TextForm, UserContainer, ViewForm} from './styles'
 
 export default function CreateUser({navigation}){
     const [name, setName] = useState('');

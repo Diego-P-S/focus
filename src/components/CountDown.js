@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { TextTime } from "./styles";
 
-const minutesToMillis = (min) => min * 1000 * 60;
-const formatTime = (time) => (time < 10 ? `0${time}` : time);
+const minutesToMillis = (min) => min * 1000 * 60; //converte minutos em milissegundos
+const formatTime = (time) => (time < 10 ? `0${time}` : time); // funcao que garante que haja sempre dois digitos
 export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd }) => {
   
   const interval = React.useRef(null);
